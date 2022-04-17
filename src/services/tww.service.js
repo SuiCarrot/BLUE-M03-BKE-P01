@@ -52,8 +52,7 @@ const findLordByIdService = (id) => {
 }
 
 const createLordService = (newLord)=>{
-    const newId = twwLegendaryLords.lenght+1;
-    newLord.id = newId;
+    newLord.id = twwLegendaryLords.lenght+1;
     twwLegendaryLords.push(newLord);
     return newLord;
 }
@@ -66,8 +65,7 @@ const updateLordService = (id, lordEdited) =>{
 };
 
 const deleteLordService = (id) => {
-    const lordIndex = twwLegendaryLords.findIndex((lord) => lord.id == id);
-  return twwLegendaryLords.splice(lordIndex, 1);  
+  return twwLegendaryLords.splice(twwLegendaryLords.findIndex((lord) => lord.id == id), 1);  
 }
 
 module.exports ={
